@@ -1,2 +1,6 @@
 /target
 **/*.rs.bk
+
+# Ignore executables
+*/part1
+*/part2
