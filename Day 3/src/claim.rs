@@ -41,4 +41,14 @@ impl Claim {
             height: captures["height"].parse().unwrap(),
         }
     }
+
+    pub fn overlaps(&self, other: &Claim) -> bool {
+        fn is_in_range(value: u32, min: u32, max: u32) -> bool {
+            value >= min && value <= max
+        }
+
+        let x_overlap = is_in_range(self.x, other.x, other.x + other.width) || is_in_range(other.x, self.x, self.x + self.width);
+        let y_overlap = is_in_range(self.y, other.y, other.y + other.height) || is_in_range(other.y, self.y, self.y + self.height);
+        return x_overlap && y_overlap;
+    }
 }
