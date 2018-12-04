@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct Guard {
     pub sleep_counts: [u16; 60]
 }
