@@ -15,7 +15,10 @@ fn main() {
 
     let numbers: Vec<i32> = numbers.split(" ").map(|s| s.parse().unwrap()).collect();
 
-    let root = Node::new(&mut 0, &numbers);
+    let root = Node::new(&numbers);
 
+    // Part 1
     println!("{}", root.all_metadata_sum());
+    // Part 2
+    println!("{}", root.value());
 }
